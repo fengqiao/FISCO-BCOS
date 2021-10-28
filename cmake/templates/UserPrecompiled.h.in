@@ -28,8 +28,12 @@
         dev::blockverifier::ExecutiveContext::Ptr context)
 {
     // Address should in [0x5001,0xffff]
-    // context->setAddress2Precompiled(Address(0x5001),
-    // std::make_shared<dev::precompiled::HelloWorldPrecompiled>());
+    context->setAddress2Precompiled(Address(0x5001),
+    std::make_shared<dev::precompiled::HelloWorldPrecompiled>());
+	
+	context->setAddress2Precompiled(Address(0x6001),
+    std::make_shared<dev::precompiled::HelloPrecompiled>());
+	
     context->setAddress2Precompiled(
         Address(0x5002), std::make_shared<dev::precompiled::DagTransferPrecompiled>());
     context->setAddress2Precompiled(
